@@ -14,15 +14,18 @@
   },
   "scripts": {
     "start": "node src/index.js",
-    "test": "jest ."
+    "test": "jest .",
+    "coverage": "node_modules/.bin/nyc --reporter=text node_modules/.bin/mocha"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "yarn test",
-      "pre-commit": "node_modules/.bin/eslint src"
+      "pre-commit": "node_modules/.bin/eslint src",
+      "pre-push": "yarn coverage"
     }
   },
   "dependencies": {
-    "husky": "^2.3.0"
+    "husky": "^2.3.0",
+    "mocha": "^6.1.4",
+    "nyc": "^14.1.1"
   }
 }
