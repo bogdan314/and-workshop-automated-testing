@@ -12,5 +12,13 @@
   "scripts": {
     "start": "node src/index.js",
     "test": "jest ."
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test"
+    } 
+  },
+  "dependencies": {
+    "husky": "^2.3.0"
   }
 }
