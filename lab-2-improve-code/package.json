@@ -15,12 +15,12 @@
   "scripts": {
     "start": "node src/index.js",
     "test": "jest .",
-    "coverage": "node_modules/.bin/nyc --reporter=text node_modules/.bin/mocha"
+    "coverage": "jest --coverage"
   },
   "husky": {
     "hooks": {
       "pre-commit": "node_modules/.bin/eslint src",
-      "pre-push": "yarn coverage"
+      "pre-push": "jest --coverage test"
     }
   },
   "dependencies": {
